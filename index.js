@@ -71,7 +71,7 @@ function toMin(time_str) {
   if (!match) throw new Error('Invalid time: "' + time_str + '"');
   var hrs = parseInt(match[1], 10);
   var min = parseInt(match[2], 10);
-  if (match[3].toLowerCase() == 'pm')
+  if (hrs != 12 && match[3].toLowerCase() == 'pm')
     hrs += 12;
   return hrs * 60 + min;
 }
